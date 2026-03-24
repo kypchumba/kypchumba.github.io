@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ken | Portfolio</title>
+    <meta
+      name="description"
+      content="A bold red developer portfolio with projects, skills, and contact details."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="orb orb-one" aria-hidden="true"></div>
+    <div class="orb orb-two" aria-hidden="true"></div>
+    <div class="orb orb-three" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">Ken</a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Tech Stack</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <span class="nav-indicator" aria-hidden="true"></span>
+        </nav>
+
+        <div class="social-strip" aria-label="Social links">
+          <a href="#" aria-label="GitHub">Git</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section" id="home">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Hello, I'm Ken Kipchumba</p>
+            <h1>
+              <span
+                class="type-role"
+                data-roles='["Web Developer","Software Engineer","Backend Dev"]'
+              >Web Developer</span>
+            </h1>
+            <p class="hero-text">
+              Expanding skills and discovering new ways to innovate through web
+              development, interface design, and practical software projects.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">View Projects</a>
+              <a class="button button-secondary" href="#contact">Download CV</a>
+            </div>
+
+            <div class="mini-socials">
+              <a href="#" aria-label="LinkedIn"><img src="./assets/linkedin.png" alt="LinkedIn" /></a>
+              <a href="#" aria-label="Instagram"><img src="./assets/instagram.png" alt="Instagram" /></a>
+              <a href="#" aria-label="WhatsApp"><img src="./assets/whatsapp.svg" alt="WhatsApp" /></a>
+              <a href="#" aria-label="GitHub"><img src="./assets/github.png" alt="GitHub" /></a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="avatar-glow">
+              <div class="avatar-core">
+                <span>{ }</span>
+              </div>
+            </div>
+
+            <div class="skill-node node-html"><img src="./assets/html5.svg" alt="HTML" /></div>
+            <div class="skill-node node-css"><img src="./assets/css3.svg" alt="CSS" /></div>
+            <div class="skill-node node-js"><img src="./assets/javascript.svg" alt="JavaScript" /></div>
+            <div class="skill-node node-py"><img src="./assets/python.svg" alt="Python" /></div>
+            <div class="skill-node node-c"><img src="./assets/c.png" alt="C++" /></div>
+          </div>
+        </section>
+
+        <section class="about section" id="about">
+          <div class="section-heading reveal">
+            <p class="eyebrow">About Me</p>
+            <h2>Creative developer blending clean code with strong visual instincts.</h2>
+          </div>
+
+          <div class="about-grid">
+            <article class="about-copy panel reveal">
+              <p>
+                I'm Ken Kipchumba, a software engineering graduate exploring web development,
+                software systems, and modern UI design. My goal is to keep
+                learning fast, build meaningful products and turn ideas into
+                useful experiences people enjoy using.
+              </p>
+
+              <div class="chip-group" aria-label="Skills and technologies">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Python</span>
+                <span>Git</span>
+                <span>UI Design</span>
+              </div>
+
+              <div class="about-social">
+                <div class="social-badge">ig</div>
+                <div>
+                  <p class="social-label">Instagram</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="code-card panel reveal" aria-label="Code profile">
+              <pre><code>const developer = {
+  name: "Ken",
+  role: "Junior Software developer",
+  passion: "Exploring skills and discovering new ways to innovate",
+  stack: ["HTML", "CSS", "JavaScript", "Python"],
+  focus: "Responsive interfaces and practical products"
+};</code></pre>
+            </article>
+          </div>
+        </section>
+
+        <section class="stack-showcase section" id="skills">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Tech Stack</p>
+            <h2>Tools I use often and the experience I have built with them.</h2>
+          </div>
+
+          <div class="stack-grid">
+            <article class="stack-card panel reveal stack-float stack-float-one">
+              <div class="stack-meta">
+                <strong>Frontend</strong>
+                <span>Core UI</span>
+              </div>
+              <h3>HTML & CSS</h3>
+              <p>Building responsive interfaces, layouts, and polished visuals.</p>
+              <div class="stack-years">
+                <span class="count-up" data-target="3" data-suffix="+">0</span>
+                <small>Years Experience</small>
+              </div>
+            </article>
+
+            <article class="stack-card panel reveal stack-float stack-float-two">
+              <div class="stack-meta">
+                <strong>Programming</strong>
+                <span>Logic and scripting</span>
+              </div>
+              <h3>JavaScript</h3>
+              <p>Interactive UI behavior, DOM work, and modern web application logic.</p>
+              <div class="stack-years">
+                <span class="count-up" data-target="2" data-suffix="+">0</span>
+                <small>Years Experience</small>
+              </div>
+            </article>
+
+            <article class="stack-card panel reveal stack-float stack-float-three">
+              <div class="stack-meta">
+                <strong>Backend</strong>
+                <span>Automation and APIs</span>
+              </div>
+              <h3>Python</h3>
+              <p>Problem solving, scripting tasks, and practical application features.</p>
+              <div class="stack-years">
+                <span class="count-up" data-target="2" data-suffix="+">0</span>
+                <small>Years Experience</small>
+              </div>
+            </article>
+
+            <article class="stack-card panel reveal stack-float stack-float-four">
+              <div class="stack-meta">
+                <strong>Libraries</strong>
+                <span>Component-driven UI</span>
+              </div>
+              <h3>React</h3>
+              <p>Reusable components, dynamic states, and app-like frontend builds.</p>
+              <div class="stack-years">
+                <span class="count-up" data-target="1" data-suffix="+">0</span>
+                <small>Years Experience</small>
+              </div>
+            </article>
+
+            <article class="stack-card panel reveal stack-float stack-float-five">
+              <div class="stack-meta">
+                <strong>Workflow</strong>
+                <span>Version control</span>
+              </div>
+              <h3>Git & GitHub</h3>
+              <p>Managing code history, collaboration, and project delivery workflows.</p>
+              <div class="stack-years">
+                <span class="count-up" data-target="2" data-suffix="+">0</span>
+                <small>Years Experience</small>
+              </div>
+            </article>
+
+            <article class="stack-card panel reveal stack-float stack-float-six">
+              <div class="stack-meta">
+                <strong>Design</strong>
+                <span>Visual systems</span>
+              </div>
+              <h3>UI Design</h3>
+              <p>Layout decisions, color systems, and interfaces that feel intentional.</p>
+              <div class="stack-years">
+                <span class="count-up" data-target="2" data-suffix="+">0</span>
+                <small>Years Experience</small>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="projects section" id="projects">
+          <div class="section-heading reveal">
+            <p class="eyebrow">My Projects</p>
+            <h2>Selected builds with a clean UI and practical purpose.</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <div class="project-actions">
+                <a href="#">Live Demo</a>
+                <a href="#">GitHub</a>
+              </div>
+              <div class="project-shot shot-weather">
+                <span class="window-bar"></span>
+                <div class="mock-grid">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <h3>Weather Dashboard</h3>
+              <p>
+                A clean weather dashboard with location search, forecast cards,
+                and responsive layout structure.
+              </p>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-actions">
+                <a href="#">Live Demo</a>
+                <a href="#">GitHub</a>
+              </div>
+              <div class="project-shot shot-social">
+                <span class="window-bar"></span>
+                <div class="mock-chart"></div>
+                <div class="mock-cards">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <h3>Social Media Dashboard</h3>
+              <p>
+                A management dashboard with analytics cards, scheduling-inspired
+                blocks, and bright UI contrast.
+              </p>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-actions">
+                <a href="#">Live Demo</a>
+                <a href="#">GitHub</a>
+              </div>
+              <div class="project-shot shot-blog">
+                <span class="window-bar"></span>
+                <div class="mock-editor">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <h3>Blog Platform</h3>
+              <p>
+                A modern blog interface focused on content publishing, readable
+                layouts, and structured components.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="contact section" id="contact">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Get In Touch</h2>
+          </div>
+
+          <div class="contact-grid">
+            <article class="contact-copy panel reveal">
+              <p>
+                Let's collaborate. I'm always open to discussing exciting
+                projects, internships, freelance work and new opportunities.
+              </p>
+
+              <ul class="contact-list">
+                <li><a href="mailto:aminecodes@example.com">aminecodes@example.com</a></li>
+                <li><a href="tel:+213000123456">+213 000 123 456</a></li>
+                <li><a href="#">Nairobi | Kenya</a></li>
+              </ul>
+
+              <div class="about-social">
+                <div class="social-badge">ig</div>
+                <div>
+                  <p class="social-label">Instagram</p>
+                </div>
+              </div>
+            </article>
+
+            <form class="contact-form panel reveal">
+              <label>
+                <span>Your Name</span>
+                <input type="text" name="name" placeholder="Your Name" />
+              </label>
+              <label>
+                <span>Your Email</span>
+                <input type="email" name="email" placeholder="Your Email" />
+              </label>
+              <label>
+                <span>Your Message</span>
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Your Message"
+                ></textarea>
+              </label>
+              <button class="button button-primary" type="submit">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
