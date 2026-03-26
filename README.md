@@ -1,14 +1,14 @@
 ## Ken Kipchumba
-
+Junior Software Engineer
 ## About Me
-I am a passionate software developer focused on building *AI-ready, full-stack applications* that solve real problems.  
+I am a passionate software developer focused on building *AI ready, fullstack applications* that solve real problems.  
 I enjoy working on modern technologies, clean UI/UX and scalable system design.
 
 ## Tech Stack
 - *Frontend:* React, HTML, CSS, JavaScript  
 - *Backend:* Flask, FastAPI  
 - *Tools:* Git, VS Code, Postman  
-- *Other:* APIs, System Design, AI Integration
+- *Other:* System Design 
 
 ## Live Demo
  https://kypchumba.github.io/
