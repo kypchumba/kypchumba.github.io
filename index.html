@@ -21,7 +21,7 @@
       <main class="page">
         <section class="hero reveal" id="top">
           <div class="hero-topline">
-            <div class="hero-avatar" aria-hidden="true">KK</div>
+            <div class="hero-avatar" aria-hidden="true"><img src="assets/socialmedia/user.png" alt="Ken Kipchumba" /></div>
             <div class="hero-identity">
               <h1>Ken Kipchumba</h1>
               <p class="hero-role">
@@ -42,7 +42,7 @@
           <div class="hero-links" aria-label="Primary links">
             <a href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:chumbakenny@gmail.com">Email</a>
+            <a href="mailto:chumbakenny@gmail.com" >Email</a>
           </div>
         </section>
 
@@ -53,16 +53,14 @@
 
           <div class="timeline">
             <article class="timeline-item">
-              <div class="timeline-logo">FK</div>
               <div class="timeline-content">
                 <h3>Freelance Developer</h3>
                 <p class="timeline-company">Independent Projects</p>
-                <p class="timeline-date">2025 - Present</p>
+                <p class="timeline-date">2024 - Present</p>
               </div>
             </article>
 
             <article class="timeline-item">
-              <div class="timeline-logo">MU</div>
               <div class="timeline-content">
                 <h3>Software Engineering Graduate</h3>
                 <p class="timeline-company">Murang'a University of Science and Technology</p>
@@ -83,36 +81,42 @@
 
           <div class="project-grid">
             <article class="project-card">
-              <div class="project-icon">AI</div>
-              <div class="project-body">
-                <h3>AI Document RAG System</h3>
-                <p>
+               <div class="project-screenshot">
+                <img src="assets/projects/job_tracker.png" alt="Job Tracker Project" />
+               </div>
+                <div class="project-body">
+                  <h3>AI Document RAG System</h3>
+                  <p>
                   Upload documents, ask questions and get answers grounded in the
                   actual file content through a practical retrieval-based workflow.
-                </p>
-              </div>
-              <div class="project-links">
+                  </p>
+                </div>
+               <div class="project-links">
                 <a href="https://github.com/kypchumba/AI-Document-RAG-system" target="_blank" rel="noopener noreferrer">Code</a>
-              </div>
+               </div>
             </article>
 
             <article class="project-card">
-              <div class="project-icon">DB</div>
+              <div class="project-screenshot">
+                <img src="assets/projects/job_tracker.png" alt="Amani Mini RDBMS Project" />
+              </div>
               <div class="project-body">
                 <h3>Amani Mini RDBMS</h3>
                 <p>
                   A small relational database management project built around a
                   real community use case and structured data handling.
                 </p>
-              </div>
-              <div class="project-links">
+               </div>
+               <div class="project-links">
                 <a href="https://amani-mini-rdbms.vercel.app" target="_blank" rel="noopener noreferrer">Live</a>
                 <a href="https://github.com/kypchumba/amani-mini-RDBMS" target="_blank" rel="noopener noreferrer">Code</a>
-              </div>
+               </div>
             </article>
 
             <article class="project-card">
-              <div class="project-icon">FR</div>
+              <div class="project-screenshot">
+                <img src="assets/projects/job_tracker.png" alt="Freelancer Portfolio Project" />
+              </div>
               <div class="project-body">
                 <h3>Freelancer Portfolio</h3>
                 <p>
@@ -132,7 +136,9 @@
 
           <div class="project-grid extra-projects" id="more-projects" hidden>
             <article class="project-card">
-              <div class="project-icon">P1</div>
+              <div class="project-screenshot">
+                <img src="assets/projects/job_tracker.png" alt="Responsive Restaurant Webpage Project" />
+              </div>
               <div class="project-body">
                 <h3>A responsive restaurant webpage</h3>
                 <p>
@@ -147,7 +153,9 @@
             </article>
 
             <article class="project-card">
-              <div class="project-icon">P2</div>
+              <div class="project-screenshot">
+                <img src="assets/projects/job_tracker.png" alt="Placeholder Project Two" />
+              </div>
               <div class="project-body">
                 <h3>Placeholder Project Two</h3>
                 <p>
@@ -195,11 +203,14 @@
 
           <div class="contact-card">
             <div class="contact-links">
-              <a href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="mailto:chumbakenny@gmail.com">Email</a>
-              <a href="https://wa.me/+254113365971" target="_blank" rel="noopener noreferrer" class="contact-button">
-                <!-- <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="phone" /> -->Phone</a>
+              <a href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">
+                <img src="assets/socialmedia/github.png" alt="github" />GitHub</a>
+              <a href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">
+                <img src="assets/socialmedia/linkedin.png" alt="linkedin" />LinkedIn</a>
+              <a href="mailto:chumbakenny@gmail.com" target="_blank" rel="noopener noreferrer">
+                <img src="assets/socialmedia/gmail.png" alt="email" />Email</a>
+              <a href="https://wa.me/+254113365971" target="_blank" rel="noopener noreferrer">
+                <img src="assets/socialmedia/whatsapp.png" alt="whatsapp" />Whatsapp</a>
             </div>
 
             <form class="contact-form">
@@ -218,7 +229,10 @@
                 <textarea name="message" rows="5" placeholder="Tell me about your project..."></textarea>
               </label>
 
-              <button class="submit-button" type="submit">Send Message</button>
+              <button class="submit-button" type="submit">
+                <span class="text">Send Message</span>
+                <span class="check">Submit</span>
+              </button>
             </form>
           </div>
         </section>
