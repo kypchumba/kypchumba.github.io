@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kypchumba/kypchumba.github.io/internal/contact"
+	"github.com/kypchumba/kypchumba.github.io/contact"
 )
 
 type appConfig struct {

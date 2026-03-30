@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kypchumba/kypchumba.github.io/internal/contact"
+	"github.com/kypchumba/kypchumba.github.io/contact"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
