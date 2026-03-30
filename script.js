@@ -138,10 +138,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const openProjectModal = (projectCard) => {
       const image = projectCard.querySelector(".project-screenshot img");
       const title = projectCard.querySelector(".project-body h3");
-      const description = projectCard.querySelector(".project-body p");
+      const description = projectCard.querySelector(".project-summary");
       const codeUrl = projectCard.dataset.codeUrl;
       const liveUrl = projectCard.dataset.liveUrl;
       const languages = projectCard.dataset.languages || "Not specified";
+      const fullDescription =
+        projectCard.dataset.fullDescription || description?.textContent?.trim() || "";
 
       if (!image || !title || !description) {
         return;
@@ -155,25 +157,35 @@ window.addEventListener("DOMContentLoaded", () => {
       projectModalTitle.textContent = title.textContent.trim();
       projectModalImage.src = image.src;
       projectModalImage.alt = image.alt;
-      projectModalDescription.textContent = description.textContent.trim();
+      projectModalDescription.textContent = fullDescription;
       projectModalLinks.innerHTML = "";
       projectModalLanguages.innerHTML = "";
 
       if (codeUrl) {
         const codeLink = document.createElement("a");
+        const codeIcon = document.createElement("img");
         codeLink.href = codeUrl;
         codeLink.target = "_blank";
         codeLink.rel = "noopener noreferrer";
-        codeLink.textContent = "GitHub Code";
+        codeLink.className = "project-modal-link project-modal-link-code";
+        codeLink.setAttribute("aria-label", "GitHub Code");
+        codeIcon.src = "assets/socialmedia/github.png";
+        codeIcon.alt = "GitHub";
+        codeLink.appendChild(codeIcon);
         projectModalLinks.appendChild(codeLink);
       }
 
       if (liveUrl) {
         const liveLink = document.createElement("a");
+        const liveIcon = document.createElement("img");
         liveLink.href = liveUrl;
         liveLink.target = "_blank";
         liveLink.rel = "noopener noreferrer";
-        liveLink.textContent = "Live Preview";
+        liveLink.className = "project-modal-link project-modal-link-live";
+        liveLink.setAttribute("aria-label", "Live Preview");
+        liveIcon.src = "assets/socialmedia/code.png";
+        liveIcon.alt = "Live Preview";
+        liveLink.appendChild(liveIcon);
         projectModalLinks.appendChild(liveLink);
       }
 

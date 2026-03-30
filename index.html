@@ -6,7 +6,7 @@
     <title>Ken Kipchumba | Software Engineer</title>
     <meta
       name="description"
-      content="Ken Kipchumba is a junior software engineer building practical web apps, AI-assisted tools and user-focused software."
+      content="Ken Kipchumba is a junior software engineer building practical web apps, AI assisted tools and Clean frontend software."
     />
     <meta name="contact-api-url" content="https://kypchumba-github-io.vercel.app/api/contact" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,22 +28,35 @@
               <p class="hero-role">
                 <span
                   class="typing-role"
-                  data-roles='["Software Developer","Web Developer","AI Automation","Backend Dev"]'
+                  data-roles='["Software Developer","Web Developer","Full Stack Engineer","AI Automation"]'
                 ></span>
               </p>
             </div>
           </div>
           <p class="hero-copy">
-            I'm a software engineer who builds practical products from idea to
+            I'm a full stack engineer who builds practical products from idea to
             working interface. I focus on clean frontend experiences, useful
             backend logic and projects that solve real problems for real users.
           </p>
-          <p class="hero-status">Open to internships, freelance projects and full-time roles.</p>
+          <p class="hero-status">Open to full time roles, remote roles, internships and freelance projects. Contact me to discuss opportunities and also collaborations.</p>
 
           <div class="hero-links" aria-label="Primary links">
-            <a href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:chumbakenny@gmail.com" >Email</a>
+            <a class="hero-pill" href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">
+              <span class="hero-pill-icon"><img src="assets/socialmedia/github.png" alt="GitHub" /></span>
+              <span class="hero-pill-label">GitHub</span>
+            </a>
+            <a class="hero-pill" href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">
+              <span class="hero-pill-icon"><img src="assets/socialmedia/linkedin.png" alt="LinkedIn" /></span>
+              <span class="hero-pill-label">LinkedIn</span>
+            </a>
+            <a class="hero-pill" href="mailto:chumbakenny@gmail.com" target="_blank" rel="noopener noreferrer">
+              <span class="hero-pill-icon"><img src="assets/socialmedia/gmail.png" alt="Email" /></span>
+              <span class="hero-pill-label">Email</span>
+            </a>
+            <a class="hero-pill" href="https://wa.me/+254113365971" target="_blank" rel="noopener noreferrer">
+              <span class="hero-pill-icon"><img src="assets/socialmedia/whatsapp.png" alt="WhatsApp" /></span>
+              <span class="hero-pill-label">WhatsApp</span>
+            </a>
           </div>
         </section>
 
@@ -72,50 +85,71 @@
         </section>
 
         <section class="section reveal" id="projects">
-          <div class="section-heading">
+           <div class="section-heading projects-heading">
             <h2>Projects</h2>
-          </div>
-
-          <div class="section-action">
-            <a href="https://github.com/kypchumba?tab=repositories" target="_blank" rel="noopener noreferrer">Go to GitHub repositories</a>
-          </div>
-
+            <a class="repo-pill" href="https://github.com/kypchumba?tab=repositories" target="_blank" rel="noopener noreferrer">
+              <span class="repo-pill-icon">
+                <img src="assets/socialmedia/github.png" alt="GitHub" />
+              </span>
+              <span class="repo-pill-label">Open GitHub repositories</span>
+            </a>
+           </div>
           <div class="project-grid">
-            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="Python, FastAPI, HTML, CSS, JavaScript" data-code-url="https://github.com/kypchumba/AI-Document-RAG-system">
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="Python, FastAPI, JavaScript, Vue.js, HTML5, CSS3" data-code-url="https://github.com/kypchumba/AI-Document-RAG-system" data-full-description="Upload documents, ask questions, and get answers grounded in the actual file content through a retrieval-based workflow. The system is built to make document collections easier to search, explore, and summarize with AI-assisted responses tied back to source material.">
                <div class="project-screenshot">
                 <img src="assets/projects/job_tracker.png" alt="Job Tracker Project" />
                </div>
                 <div class="project-body">
                   <h3>AI Document RAG System</h3>
-                  <p>
-                  Upload documents, ask questions and get answers grounded in the
-                  actual file content through a practical retrieval-based workflow.
+                  <p class="project-summary">
+                  Retrieval based document Q&amp;A for grounded answers from uploaded files.
                   </p>
                 </div>
             </article>
 
-            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="Python, SQL, HTML, CSS, JavaScript" data-code-url="https://github.com/kypchumba/amani-mini-RDBMS" data-live-url="https://amani-mini-rdbms.vercel.app">
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="Python, FastAPI, JavaScript, React, HTML5, CSS3" data-code-url="https://github.com/kypchumba/AI-Document-RAG-system" data-full-description="Automatically collects, filters, and analyzes job listings from multiple global and remote-first sources. It helps surface trends, useful keywords, and role patterns so job seekers can track opportunities more efficiently and make better application decisions.">
+               <div class="project-screenshot">
+                <img src="assets/projects/ai.png" alt="Job Tracker Project" />
+               </div>
+                <div class="project-body">
+                  <h3>Job Market Intelligence Scraper</h3>
+                  <p class="project-summary">
+                  Automated job listing collection and analysis across remote-friendly sources.
+                  </p>
+                </div>
+            </article>
+
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="Python,  Flask, JavaScript, SQL, HTML5, CSS3" data-code-url="https://github.com/kypchumba/amani-mini-RDBMS" data-live-url="https://amani-mini-rdbms.vercel.app" data-full-description="A lightweight relational database management project with support for core SQL-style operations through a REPL console. It focuses on understanding how structured data, queries, and storage can work together in a simplified but practical system.">
               <div class="project-screenshot">
-                <img src="assets/projects/job_tracker.png" alt="Amani Mini RDBMS Project" />
+                <img src="assets/projects/amani.png" alt="Amani Mini RDBMS Project" />
               </div>
               <div class="project-body">
                 <h3>Amani Mini RDBMS</h3>
-                <p>
-                  A small relational database management project built around a
-                  real community use case and structured data handling.
+                <p class="project-summary">
+                  Lightweight RDBMS with core SQL-style operations in a REPL console.
                 </p>
                </div>
             </article>
 
-            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="HTML, CSS, JavaScript" data-code-url="https://github.com/kypchumba/freelancer_portfolio">
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="HTML, CSS, JavaScript" data-code-url="https://github.com/kypchumba/freelancer_portfolio" data-full-description="A client-focused personal portfolio designed to present services clearly, communicate professionalism, and make inquiries easy. The experience emphasizes clean structure, trust-building visuals, and a straightforward path for potential clients to get in touch.">
               <div class="project-screenshot">
-                <img src="assets/projects/job_tracker.png" alt="Freelancer Portfolio Project" />
+                <img src="assets/projects/freelance.png" alt="Freelancer Portfolio Project" />
               </div>
               <div class="project-body">
                 <h3>Freelancer Portfolio</h3>
-                <p>
-                  A client-focused personal portfolio designed to present services
-                  clearly and make inquiries easy.
+                <p class="project-summary">
+                  Service-focused portfolio experience built to encourage client inquiries.
+                </p>
+              </div>
+            </article>
+            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="HTML5, CSS3, JavaScript" data-code-url="https://github.com/kypchumba/restaurant_webpage" data-live-url="https://restaurant-webpage-beige-tau.vercel.app/" data-full-description="A modern restaurant landing page built to showcase menus, services, and brand identity with a polished responsive layout. The project focuses on customer-facing clarity, visual presentation, and a browsing experience optimized for both desktop and mobile users.">
+              <div class="project-screenshot">
+                <img src="assets/projects/restaurant.png" alt="Responsive Restaurant Webpage Project" />
+              </div>
+              <div class="project-body">
+                <h3>A responsive restaurant webpage</h3>
+                <p class="project-summary">
+                 Modern responsive restaurant landing page for hotel booking, menu display and party bookings.
                 </p>
               </div>
             </article>
@@ -126,31 +160,7 @@
           </div>
 
           <div class="project-grid extra-projects" id="more-projects" hidden>
-            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="HTML, CSS, JavaScript" data-code-url="https://github.com/kypchumba/restaurant_webpage" data-live-url="https://restaurant-webpage-beige-tau.vercel.app/">
-              <div class="project-screenshot">
-                <img src="assets/projects/job_tracker.png" alt="Responsive Restaurant Webpage Project" />
-              </div>
-              <div class="project-body">
-                <h3>A responsive restaurant webpage</h3>
-                <p>
-                 A modern restaurant landing page designed to showcase menus, services and branding
-                  with a responsive, user friendly interface optimized for customer engagement.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card" tabindex="0" role="button" aria-haspopup="dialog" data-languages="To be added">
-              <div class="project-screenshot">
-                <img src="assets/projects/job_tracker.png" alt="Placeholder Project Two" />
-              </div>
-              <div class="project-body">
-                <h3>Placeholder Project Two</h3>
-                <p>
-                  Use this slot for another build you want recruiters or clients
-                  to see after expanding the projects section.
-                </p>
-              </div>
-            </article>
+  <!-- I WILL BE ADDING MORE PROJECTS HERE SOON -->
           </div>
         </section>
 
@@ -186,14 +196,22 @@
 
           <div class="contact-card">
             <div class="contact-links">
-              <a href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">
-                <img src="assets/socialmedia/github.png" alt="github" />GitHub</a>
-              <a href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">
-                <img src="assets/socialmedia/linkedin.png" alt="linkedin" />LinkedIn</a>
-              <a href="mailto:chumbakenny@gmail.com" target="_blank" rel="noopener noreferrer">
-                <img src="assets/socialmedia/gmail.png" alt="email" />Email</a>
-              <a href="https://wa.me/+254113365971" target="_blank" rel="noopener noreferrer">
-                <img src="assets/socialmedia/whatsapp.png" alt="whatsapp" />Whatsapp</a>
+              <a class="contact-pill" href="https://github.com/kypchumba" target="_blank" rel="noopener noreferrer">
+                <span class="contact-pill-icon"><img src="assets/socialmedia/github.png" alt="GitHub" /></span>
+                <span class="contact-pill-label">GitHub</span>
+              </a>
+              <a class="contact-pill" href="https://linkedin.com/in/ken-kipchumba-0020a7275" target="_blank" rel="noopener noreferrer">
+                <span class="contact-pill-icon"><img src="assets/socialmedia/linkedin.png" alt="LinkedIn" /></span>
+                <span class="contact-pill-label">LinkedIn</span>
+              </a>
+              <a class="contact-pill" href="mailto:chumbakenny@gmail.com" target="_blank" rel="noopener noreferrer">
+                <span class="contact-pill-icon"><img src="assets/socialmedia/gmail.png" alt="Email" /></span>
+                <span class="contact-pill-label">Email</span>
+              </a>
+              <a class="contact-pill" href="https://wa.me/+254113365971" target="_blank" rel="noopener noreferrer">
+                <span class="contact-pill-icon"><img src="assets/socialmedia/whatsapp.png" alt="Whatsapp" /></span>
+                <span class="contact-pill-label">Whatsapp</span>
+              </a>
             </div>
 
             <form class="contact-form">
