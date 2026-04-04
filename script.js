@@ -246,6 +246,38 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+    const items = document.querySelectorAll(".timeline-item");
+   
+   function closeAll() {
+     items.forEach(i => {
+       i.classList.remove("active");
+       const content = i.querySelector(".timeline-details");
+       content.style.maxHeight = null;
+     });
+   }
+   
+   items.forEach(item => {
+     const header = item.querySelector(".timeline-header");
+     const content = item.querySelector(".timeline-details");
+   
+     header.addEventListener("click", (e) => {
+       e.stopPropagation(); // prevent triggering document click
+   
+       const isOpen = item.classList.contains("active");
+   
+       closeAll();
+   
+       if (!isOpen) {
+         item.classList.add("active");
+         content.style.maxHeight = content.scrollHeight + "px";
+       }
+     });
+   });
+   
+   document.addEventListener("click", () => {
+     closeAll();
+   });
+   
   if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
