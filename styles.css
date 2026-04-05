@@ -465,6 +465,12 @@ p {
   cursor: pointer;
 }
 
+.timeline-header:hover{
+  border-top: 1px solid var(--hoover);
+  border-right: 1px solid var(--hoover);
+  border-radius: 10px 10px 0 0;
+}
+
 .timeline-header {
   display: flex;
   justify-content: space-between;
@@ -800,6 +806,16 @@ body.modal-open .site-shell {
 .contact-form label {
   display: grid;
   gap: 0.4rem;
+}
+
+.contact-form-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .contact-form span {

@@ -252,17 +252,22 @@
             <form class="contact-form">
               <label>
                 <span>Name</span>
-                <input type="text" name="name" placeholder="Your name" />
+                <input type="text" name="name" placeholder="Your name" maxlength="120" required />
               </label>
 
               <label>
                 <span>Email</span>
-                <input type="email" name="email" placeholder="Your email" />
+                <input type="email" name="email" placeholder="Your email" maxlength="254" required />
               </label>
 
               <label>
                 <span>Message</span>
-                <textarea name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                <textarea name="message" rows="5" placeholder="Tell me about your project..." maxlength="5000" required></textarea>
+              </label>
+
+              <label class="contact-form-trap" aria-hidden="true">
+                <span>Company</span>
+                <input type="text" name="company" tabindex="-1" autocomplete="off" />
               </label>
 
               <button class="submit-button" type="submit">

@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
+  let formSessionStartedAt = performance.now();
   const revealItems = document.querySelectorAll(".reveal");
   const typingRole = document.querySelector(".typing-role");
   const toggleProjectsButton = document.querySelector(".toggle-projects");
@@ -18,8 +19,32 @@ window.addEventListener("DOMContentLoaded", () => {
   const contactApiURL =
     contactApiMeta?.getAttribute("content")?.trim() || `${window.location.origin}/contact`;
   const modalTransitionDuration = 260;
+  const formBehavior = {
+    interactionCount: 0,
+    interactionTypes: new Set(),
+  };
   let activeProjectCard = null;
   let modalCloseTimer = null;
+
+  const registerInteraction = (type) => {
+    if (formBehavior.interactionCount < 50) {
+      formBehavior.interactionCount += 1;
+    }
+
+    formBehavior.interactionTypes.add(type);
+  };
+
+  ["pointerdown", "mousemove", "scroll", "touchstart", "keydown", "focusin", "input"].forEach(
+    (eventName) => {
+      document.addEventListener(
+        eventName,
+        () => {
+          registerInteraction(eventName);
+        },
+        { passive: true }
+      );
+    }
+  );
 
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
@@ -289,6 +314,10 @@ window.addEventListener("DOMContentLoaded", () => {
         name: String(formData.get("name") || "").trim(),
         email: String(formData.get("email") || "").trim(),
         message: String(formData.get("message") || "").trim(),
+        company: String(formData.get("company") || "").trim(),
+        timeToSubmitMs: Math.round(performance.now() - formSessionStartedAt),
+        interactionCount: formBehavior.interactionCount,
+        interactionTypes: Array.from(formBehavior.interactionTypes),
       };
 
       if (!submitButton) {
@@ -326,6 +355,9 @@ window.addEventListener("DOMContentLoaded", () => {
           }
 
           contactForm.reset();
+          formSessionStartedAt = performance.now();
+          formBehavior.interactionCount = 0;
+          formBehavior.interactionTypes.clear();
           if (feedback) {
             feedback.textContent = result.message || "Message sent successfully.";
             feedback.classList.add("is-success");
