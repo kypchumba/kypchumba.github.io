@@ -23,6 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
     interactionCount: 0,
     interactionTypes: new Set(),
   };
+
+  function countLetters(value) {
+    const matches = value.match(/[A-Za-z]/g);
+    return matches ? matches.length : 0;
+  }
   let activeProjectCard = null;
   let modalCloseTimer = null;
 
@@ -332,6 +337,30 @@ window.addEventListener("DOMContentLoaded", () => {
       if (!payload.name || !payload.email || !payload.message) {
         if (feedback) {
           feedback.textContent = "Please fill in your name, email, and message.";
+          feedback.classList.add("is-error");
+        }
+        return;
+      }
+
+      if (countLetters(payload.name) < 3) {
+        if (feedback) {
+          feedback.textContent = "Enter real name.";
+          feedback.classList.add("is-error");
+        }
+        return;
+      }
+
+      if (payload.email.length < 5) {
+        if (feedback) {
+          feedback.textContent = "Enter real email.";
+          feedback.classList.add("is-error");
+        }
+        return;
+      }
+
+      if (payload.message.length < 5) {
+        if (feedback) {
+          feedback.textContent = "Type something.";
           feedback.classList.add("is-error");
         }
         return;

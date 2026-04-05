@@ -16,12 +16,16 @@ import (
 	"strings"
 	"sync"
 	"time"
+	"unicode"
 )
 
 const (
 	maxNameLength       = 120
 	maxEmailLength      = 254
 	maxMessageLength    = 5000
+	minNameLetters      = 3
+	minEmailLength      = 5
+	minMessageLength    = 5
 	minSubmitTimeMS     = 1500
 	minInteractionCount = 2
 	rateLimitThreshold  = 5
@@ -279,8 +283,20 @@ func validateAndSanitize(payload Request) (Request, error) {
 		return Request{}, fmt.Errorf("Name must be %d characters or fewer.", maxNameLength)
 	}
 
+	if countLetters(name) < minNameLetters {
+		return Request{}, errors.New("Enter real name.")
+	}
+
+	if len([]rune(email)) < minEmailLength {
+		return Request{}, errors.New("Enter real email.")
+	}
+
 	if len([]rune(email)) > maxEmailLength {
 		return Request{}, fmt.Errorf("Email must be %d characters or fewer.", maxEmailLength)
+	}
+
+	if len([]rune(message)) < minMessageLength {
+		return Request{}, errors.New("Type something.")
 	}
 
 	if len([]rune(message)) > maxMessageLength {
@@ -300,6 +316,17 @@ func validateAndSanitize(payload Request) (Request, error) {
 		InteractionCount: payload.InteractionCount,
 		InteractionTypes: payload.InteractionTypes,
 	}, nil
+}
+
+func countLetters(value string) int {
+	count := 0
+	for _, r := range value {
+		if unicode.IsLetter(r) {
+			count++
+		}
+	}
+
+	return count
 }
 
 func sanitizeSingleLine(value string) string {
