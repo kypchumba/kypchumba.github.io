@@ -132,6 +132,7 @@ h1 {
 }
 
 h2 {
+  color:aqua;
   font-size: clamp(2rem, 5vw, 2.8rem);
   line-height: 0.95;
 }
@@ -494,6 +495,13 @@ p {
   gap: 0.22rem;
 }
 
+.timeline-details p{
+  color: #d2d2d2;
+  font-family: 'Arial', sans-serif ;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
 .timeline-details {
   max-height: 0;
   overflow: hidden;
@@ -501,6 +509,7 @@ p {
 }
 
 .timeline-item.active .timeline-details {
+  max-height: 200px;
   margin-top: 10px;
 }
 
@@ -518,11 +527,6 @@ p {
   font-size: 0.9rem;
   color: var(--text);
   white-space: nowrap;
-}
-
-.timeline-item.active .timeline-details {
-  max-height: 200px;
-  margin-top: 10px;
 }
 
 .timeline-header {
