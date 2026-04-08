@@ -186,14 +186,12 @@ p {
 .project-links a,
 .project-links span,
 .section-action a,
-.section-action button,
-.stack-grid span {
+.section-action button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 2.65rem;
   padding: 0 1rem;
-  /*border: 1px solid var(--border);*/
   border-radius: 999px;
   background: var(--surface);
   color: var(--text);
@@ -728,12 +726,12 @@ body.modal-open .site-shell {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2rem;
-  min-width: 2.4rem;
-  padding: 0 0.8rem;
+  max-height: 2rem;
+  max-width: 3.6rem;
+  padding: 0.8rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgb(189, 0, 0);
+  background: rgb(255, 0, 0);
   color: var(--text);
   font: inherit;
   white-space: nowrap;
@@ -781,6 +779,25 @@ body.modal-open .site-shell {
   background: var(--surface);
   color: var(--text);
   font-size: 0.92rem;
+}
+
+.stack-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.65rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.stack-grid img{
+  padding-right: 0.2rem;
+  max-width: 1.5rem;
 }
 
 .stack-grid {
