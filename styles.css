@@ -298,10 +298,11 @@ p {
 
 .contact-links .contact-pill:hover,
 .contact-links .contact-pill:focus-visible {
-  width: 9.5rem;
+  width: 8.5rem;
   padding: 0 0.85rem 0 0.15rem;
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--hoover);
+  font-weight: 900;
 }
 
 .contact-pill-icon {
@@ -362,7 +363,7 @@ p {
   width: 8.75rem;
   padding: 0 0.85rem 0 0.15rem;
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--hoover);
 }
 
 .hero-pill-icon {
@@ -387,6 +388,8 @@ p {
   position: absolute;
   left: 3rem;
   top: 50%;
+  font-weight: 900;
+  color: var(--text);
   transform: translate(10px, -50%);
   opacity: 0;
   transition: opacity 450ms ease, transform 1000ms ease;
@@ -824,11 +827,6 @@ body.modal-open .site-shell {
   gap: 0.9rem;
 }
 
-.contact-form label {
-  display: grid;
-  gap: 0.4rem;
-}
-
 .contact-form-trap {
   position: absolute;
   left: -10000px;
@@ -839,40 +837,82 @@ body.modal-open .site-shell {
   pointer-events: none;
 }
 
-.contact-form span {
-  font-size: 0.86rem;
-  color: var(--text);
-}
-
 .contact-feedback {
   min-height: 1.5rem;
   font-size: 0.92rem;
 }
 
 .contact-feedback.is-error {
-  color: #ffb5b5;
+  color: #fc1313;
 }
 
 .contact-feedback.is-success {
-  color: #8dff9c;
+  color: #23ff40;
 }
 
-.contact-form input,
-.contact-form textarea {
+.float-field {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.float-field input,
+.float-field textarea {
   width: 100%;
-  padding: 0.9rem 1rem;
-  border-radius: 18px;
-  background: rgb(199, 200, 210);
-  color: black;
-  font: inherit;
-  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   outline: none;
+  background: transparent;
+  padding: 16px 12px;
   resize: vertical;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #d0c6b8;
+.float-field textarea {
+  min-height: 120px;
+  padding-top: 20px;
+}
+
+.float-field span {
+  position: absolute;
+  left: 12px;
+  font-size: 16px;
+  color: #777;
+  pointer-events: none;
+  transition: 0.2s ease;
+  background: var(--bg);
+  padding: 0 6px;
+}
+
+.float-field input + span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.float-field textarea + span {
+  top: 14px;
+  transform: none;
+}
+
+.float-field input:focus + span,
+.float-field input:not(:placeholder-shown) + span {
+  top: -8px;
+  font-size: 12px;
+  color: rgb(0, 255, 255);
+  transform: none;
+}
+
+.float-field textarea:focus + span,
+.float-field textarea:not(:placeholder-shown) + span {
+  top: -8px;
+  font-size: 12px;
+  color: rgb(0, 255, 255);
+}
+
+.float-field input:focus,
+.float-field textarea:focus {
+  border-color: rgb(0, 255, 255);
 }
 
 .submit-button {
