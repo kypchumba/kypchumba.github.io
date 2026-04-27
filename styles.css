@@ -851,9 +851,15 @@ body.modal-open .site-shell {
 }
 
 .float-field {
+  overflow: visible;
   position: relative;
   display: block;
   margin-bottom: 20px;
+}
+
+.float-field input {
+  position: relative;
+  z-index: 1;
 }
 
 .float-field input,
@@ -875,6 +881,7 @@ body.modal-open .site-shell {
 }
 
 .float-field span {
+  z-index: 3;
   position: absolute;
   left: 12px;
   font-size: 16px;
@@ -913,6 +920,19 @@ body.modal-open .site-shell {
 .float-field input:focus,
 .float-field textarea:focus {
   border-color: rgb(0, 255, 255);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 40px var(--bg) inset !important;
+    -webkit-text-fill-color: #fff !important;
+    caret-color: #fff;
+}
+
+input:-webkit-autofill + span {
+  top: -8px;
+  font-size: 12px;
+  color: rgb(0, 255, 255);
+  transform: none;
 }
 
 .submit-button {
