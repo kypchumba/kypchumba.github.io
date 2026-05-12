@@ -785,6 +785,11 @@ body.modal-open .site-shell {
 }
 
 .stack-grid span {
+  color: rgb(0, 0, 0) !important;
+  font-size: 1rem !important;
+}
+
+.stack-grid span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -800,18 +805,23 @@ body.modal-open .site-shell {
 
 .stack-grid img{
   padding-right: 0.2rem;
-  max-width: 1.5rem;
+  max-width: 2rem;
 }
 
 .stack-grid {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  background-color: #aaaaaa;
+  background-image:
+    linear-gradient(to right, rgba(0, 81, 255, 0.386) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 81, 255, 0.386) 1px, transparent 1px);
+  background-size: 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.75rem;
-}
-
-.stack-grid span {
-  min-height: 2.5rem;
-  box-shadow: none;
+  gap: 0.75rem;
+  padding: 2rem;
+  border-radius: 32px;
 }
 
 .contact-card {
