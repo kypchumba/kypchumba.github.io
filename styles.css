@@ -1,10 +1,10 @@
 :root {
-  --bg: #01012b;
+  --bg: rgb(1, 1, 43);
   --surface: rgb(17, 17, 78);
-  --hoover: #00ff15a9;
-  --border: #ffffff44;
-  --text: #ffffff;
-  --muted: #c6c6c6;
+  --hoover: rgb(0, 255, 255);
+  --border: rgba(255, 255, 255, 0.267);
+  --text: rgb(255, 255, 255);
+  --muted: rgb(198, 198, 198);
   --max-width: 760px;
 }
 * {
@@ -580,7 +580,7 @@ p {
 
 .project-card:hover,
 .project-card:focus-visible {border: 1px solid var(--hoover);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: 0px 20px 40px rgba(255, 255, 255, 0.212);
 }
 
@@ -1039,7 +1039,6 @@ input:-webkit-autofill + span {
 
   .stack-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
   }
 
   .project-modal {
