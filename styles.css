@@ -786,7 +786,8 @@ body.modal-open .site-shell {
 
 .stack-grid span {
   color: rgb(0, 0, 0) !important;
-  font-size: 1rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 900 !important;
 }
 
 .stack-grid span {
@@ -820,7 +821,7 @@ body.modal-open .site-shell {
   grid-template-columns: repeat(5, 1fr);
   gap: 0.75rem;
   gap: 0.75rem;
-  padding: 2rem;
+  padding: 2rem 0rem;
   border-radius: 32px;
 }
 
@@ -912,6 +913,7 @@ body.modal-open .site-shell {
   transform: none;
 }
 
+.float-field input:hover + span,
 .float-field input:focus + span,
 .float-field input:not(:placeholder-shown) + span {
   top: -8px;
@@ -920,6 +922,7 @@ body.modal-open .site-shell {
   transform: none;
 }
 
+.float-field textarea:hover + span,
 .float-field textarea:focus + span,
 .float-field textarea:not(:placeholder-shown) + span {
   top: -8px;
@@ -927,7 +930,9 @@ body.modal-open .site-shell {
   color: rgb(0, 255, 255);
 }
 
+.float-field input:hover,
 .float-field input:focus,
+.float-field textarea:hover,
 .float-field textarea:focus {
   border-color: rgb(0, 255, 255);
 }
@@ -1031,6 +1036,11 @@ input:-webkit-autofill + span {
   }
 
   .timeline-item{  grid-template-columns: 1fr;}
+
+  .stack-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  }
 
   .project-modal {
     padding: 0.85rem;
