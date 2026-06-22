@@ -187,7 +187,7 @@ window.addEventListener("DOMContentLoaded", () => {
       projectModalTitle.textContent = title.textContent.trim();
       projectModalImage.src = image.src;
       projectModalImage.alt = image.alt;
-      projectModalDescription.textContent = fullDescription;
+      projectModalDescription.innerHTML = fullDescription;
       projectModalLinks.innerHTML = "";
       projectModalLanguages.innerHTML = "";
 
