@@ -713,6 +713,9 @@ body.modal-open .site-shell {
 .project-modal-description p {
   max-height: none;
   overflow: visible;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+
 }
 
 .project-modal-dialog.can-scroll .project-modal-description p {
