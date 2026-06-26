@@ -189,7 +189,7 @@ window.addEventListener("DOMContentLoaded", () => {
       projectModalImage.alt = image.alt;
       projectModalDescription.innerHTML = fullDescription;
       projectModalLinks.innerHTML = "";
-      projectModalLanguages.innerHTML = "";
+      projectModalLanguages.innerHTML = projectCard.dataset.languages;
 
       if (codeUrl) {
         const codeLink = document.createElement("a");
@@ -218,17 +218,6 @@ window.addEventListener("DOMContentLoaded", () => {
         liveLink.appendChild(liveIcon);
         projectModalLinks.appendChild(liveLink);
       }
-
-      languages
-        .split(",")
-        .map((language) => language.trim())
-        .filter(Boolean)
-        .forEach((language) => {
-          const chip = document.createElement("span");
-          chip.className = "project-language-chip";
-          chip.textContent = language;
-          projectModalLanguages.appendChild(chip);
-        });
 
       activeProjectCard = projectCard;
       projectModal.hidden = false;
