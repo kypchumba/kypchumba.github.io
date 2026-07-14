@@ -689,10 +689,34 @@ body.modal-open .site-shell {
 }
 
 .project-modal-header,
-.project-modal-languages,
 .project-modal-description {
   display: grid;
   gap: 0.45rem;
+}
+
+.project-modal-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.project-modal-languages img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    padding: 6px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.project-modal-languages img:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
 }
 
 .project-modal-topbar {
