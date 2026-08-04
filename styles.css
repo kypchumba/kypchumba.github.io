@@ -1,7 +1,7 @@
 :root {
   --bg: rgb(1, 1, 43);
   --surface: rgb(17, 17, 78);
-  --hoover: rgb(0, 255, 255);
+  --hoover: rgb(41, 216, 216);
   --border: rgba(255, 255, 255, 0.267);
   --text: rgb(255, 255, 255);
   --muted: rgb(198, 198, 198);
@@ -812,22 +812,15 @@ body.modal-open .site-shell {
 }
 
 .stack-grid span {
-  color: rgb(0, 0, 0) !important;
-  font-size: 1.2rem !important;
-  font-weight: 900 !important;
-}
-
-.stack-grid span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 2.65rem;
   padding: 0 1rem;
-  border-radius: 999px;
-  color: var(--text);
+  border-radius: 999px;  color: rgb(0, 0, 0);
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
