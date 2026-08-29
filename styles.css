@@ -211,27 +211,19 @@ p {
 }
 
 #projects .repo-pill {
-  width: 2.1rem;
+  width: 16.75rem;
+  height: 2.8rem;
   overflow: hidden;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.75rem;
-  min-height: 2rem;
-  padding: 0;
+  padding: 0 0.9rem 0 0.15rem;
   border: 0;
-  border-radius: 0;
-  background: transparent;
+  border-radius: 999px;
+  background: var(--surface);
   box-shadow: none;
   white-space: nowrap;
   position: relative;
-  transition: width 1000ms ease, padding 1000ms ease, border-radius 1000ms ease,
-    background-color 1000ms ease, transform 180ms ease;
-}
-
-#projects .repo-pill {
-  width: 2.8rem;
-  min-height: 2.8rem;
+  transition: background-color 300ms ease;
 }
 
 #projects .repo-pill:hover,
@@ -239,42 +231,99 @@ p {
   width: 16.75rem;
   padding: 0 0.9rem 0 0.15rem;
   border-radius: 999px;
-  background: var(--surface);
-  justify-content: flex-start;
-}
-
-.repo-pill-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.8rem;
-  height: 2.8rem;
-  flex: 0 0 2.8rem;
-}
-
-.repo-pill-icon img {
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
-  padding-right: 0;
-  max-width: none;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
+  background: var(--hoover);
 }
 
 .repo-pill-label {
   position: absolute;
   left: 3rem;
   top: 50%;
-  transform: translate(10px, -50%);
-  opacity: 0;
-  transition: opacity 450ms ease, transform 1000ms ease;
+
+  transform: translateY(-50%);
+
+  opacity: 1;
   pointer-events: none;
+
+  z-index: 1;
 }
 
-.repo-pill:hover .repo-pill-label,
-.repo-pill:focus-visible .repo-pill-label {
-  opacity: 1;
-  transform: translate(0, -50%);
+.repo-pill-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  animation: wheelTravel 5s cubic-bezier(0.45, 0, 0.55, 1)
+             infinite alternate;
+}
+
+.repo-pill-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  animation: wheelTravel 4.5s ease-in-out infinite alternate;
+}
+.repo-pill-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  animation: wheelTravel 6s ease-in-out infinite;
+}
+
+.repo-pill-icon img {
+  width: 3rem;
+  height: 3rem;
+
+  object-fit: contain;
+  max-width: none;
+
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
+}
+
+@keyframes wheelTravel {
+
+  0% {
+    left: 0;
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  45% {
+    left: calc(100% - 2.8rem);
+    transform: translateY(-50%) rotate(720deg);
+  }
+
+  100% {
+    left: 0;
+    transform: translateY(-50%) rotate(0deg);
+  }
 }
 
 .contact-links .contact-pill {
@@ -1040,7 +1089,7 @@ input:-webkit-autofill + span {
 @media (max-width: 720px) {
   .site-shell {
     width: min(calc(100% - 1rem), var(--max-width));
-    padding-top: 1.25rem;
+    padding-top: 2.25rem;
   }
 
   .page {
