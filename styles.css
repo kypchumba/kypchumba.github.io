@@ -169,6 +169,21 @@ p {
   max-width: 100%;
 }
 
+.resume-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.resume-button .text,
+.resume-button .check {
+  width: 100%;
+  text-align: center;
+}
+
 .contact-links,
 .project-links {
   display: flex;
