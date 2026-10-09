@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   let activeProjectCard = null;
   let modalCloseTimer = null;
+  let modalHistoryActive = false;
 
   const registerInteraction = (type) => {
     if (formBehavior.interactionCount < 50) {
@@ -139,14 +140,14 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    const closeProjectModal = () => {
+    const closeProjectModal = (fromBrowserBack = false) => {
       projectModal.classList.remove("is-open");
       document.body.classList.remove("modal-open");
-
+    
       if (modalCloseTimer) {
         window.clearTimeout(modalCloseTimer);
       }
-
+    
       modalCloseTimer = window.setTimeout(() => {
         projectModal.hidden = true;
         projectModal.setAttribute("aria-hidden", "true");
@@ -158,10 +159,19 @@ window.addEventListener("DOMContentLoaded", () => {
         projectModalDialog.scrollTop = 0;
         modalCloseTimer = null;
       }, modalTransitionDuration);
-
+    
       if (activeProjectCard) {
         activeProjectCard.focus();
         activeProjectCard = null;
+      }
+    
+      // If the modal was closed using the Close button,
+      // backdrop or Escape key, remove its history entry.
+      if (!fromBrowserBack && modalHistoryActive) {
+        modalHistoryActive = false;
+        window.history.back();
+      } else if (fromBrowserBack) {
+        modalHistoryActive = false;
       }
     };
 
@@ -220,6 +230,16 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       activeProjectCard = projectCard;
+      if (!modalHistoryActive) {
+        window.history.pushState(
+          { projectModal: true },
+          "",
+          window.location.href
+        );
+      
+        modalHistoryActive = true;
+      }
+      
       projectModal.hidden = false;
       projectModal.setAttribute("aria-hidden", "false");
       document.body.classList.add("modal-open");
@@ -261,6 +281,12 @@ window.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", () => {
       if (!projectModal.hidden) {
         updateModalOverflow();
+      }
+    });
+
+    window.addEventListener("popstate", () => {
+      if (!projectModal.hidden && modalHistoryActive) {
+        closeProjectModal(true);
       }
     });
   }
