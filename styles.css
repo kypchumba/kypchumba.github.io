@@ -782,11 +782,13 @@ body.modal-open .site-shell {
   opacity: 1;
 }
 
-.project-modal-close {
+.project-modal-close-inline {
   display: none;
 }
 
 .project-modal-content {
+  min-height: 0;
+  overflow-y: auto;
   display: grid;
   gap: 0.85rem;
 }
@@ -820,13 +822,13 @@ body.modal-open .site-shell {
     padding: 6px;
     border-radius: 10px;
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .project-modal-languages img:hover {
-    transform: translateY(-4px) scale(1.1);
+    transform: scale(1.1);
     box-shadow: 0 8px 20px rgba(0,0,0,.15);
 }
 
@@ -850,7 +852,6 @@ body.modal-open .site-shell {
   overflow: visible;
   margin-bottom: 1rem;
   line-height: 1.6;
-
 }
 
 .project-modal-dialog.can-scroll .project-modal-description p {
@@ -858,33 +859,49 @@ body.modal-open .site-shell {
 }
 
 .project-modal-links {
+  padding-right: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
-.project-modal-close-inline {
-  display: inline-flex;
+.project-modal-links img {
+  max-height: 2.0rem;
+  max-width:fit-content;
+}
+
+.project-modal-close {
+  display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 2rem;
-  max-width: 3.6rem;
-  padding: 0.8rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgb(255, 0, 0);
-  color: var(--text);
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  z-index: 10;
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
   font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.5s ease, background-color 0.3s ease, color 0.3s ease; 
   white-space: nowrap;
 }
 
-.project-modal-links a:hover,
-.project-modal-close-inline:hover {
-  transform: translateY(-4px);
+.project-modal-close:hover {
+  transform: rotate(360deg);
+  background-color: rgb(255, 0, 0);
+  color: rgb(255,255,255);
 }
 
-.project-modal-close-inline {
-  cursor: pointer;
+.project-modal-links a:hover{
+  transform: scale(1.1);
 }
 
 .project-modal-link {
