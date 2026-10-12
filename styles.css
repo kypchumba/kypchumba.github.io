@@ -326,12 +326,9 @@ p {
   position: absolute;
   left: 3rem;
   top: 50%;
-
   transform: translateY(-50%);
-
   opacity: 1;
   pointer-events: none;
-
   z-index: 1;
 }
 
@@ -430,12 +427,6 @@ p {
   box-shadow: none;
   position: relative;
   transition: transform 220ms ease;
-}
-
-.hero-links .hero-pill:hover,
-.hero-links .hero-pill:focus-visible {
-  transform: translateY(-2px);
-  background: transparent;
 }
 
 .hero-pill-icon {
@@ -701,7 +692,6 @@ p {
 
 .project-card:hover,
 .project-card:focus-visible {border: 1px solid var(--hoover);
-  transform: translateY(-2px);
   box-shadow: 0px 20px 40px rgba(255, 255, 255, 0.212);
 }
 
@@ -770,7 +760,7 @@ body.modal-open .site-shell {
 
 .project-modal-dialog {
   position: relative;
-  width: min(74vw, 560px);
+  width: min(74vw, 660px);
   max-height: min(90vh, 820px);
   overflow: hidden;
   padding: 0.9rem;
@@ -901,7 +891,6 @@ body.modal-open .site-shell {
   flex: 0 0 auto;
 }
 
-.project-modal-link-live img,
 .project-modal-link img {
   width: 2.5rem;
 }
@@ -1095,7 +1084,7 @@ input:-webkit-autofill + span {
   justify-self: start;
   min-height: 2.8rem;
   padding: 0 1.1rem;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 999px;
   background: var(--surface);
   position: relative;
@@ -1118,7 +1107,6 @@ input:-webkit-autofill + span {
 }
 
 .submit-button:hover{
-  transform: translateY(-4px);
   background-color: var(--hoover);
   content: "Submit";
 }
@@ -1161,7 +1149,6 @@ input:-webkit-autofill + span {
 @media (max-width: 720px) {
   .site-shell {
     width: min(calc(100% - 1rem), var(--max-width));
-    padding-top: 2.25rem;
   }
 
   .page {
