@@ -821,8 +821,7 @@ body.modal-open .site-shell {
     object-fit: contain;
     padding: 6px;
     border-radius: 10px;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+    background: var(--muted);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
