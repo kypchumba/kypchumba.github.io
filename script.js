@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.querySelector(".contact-form");
   const projectCards = document.querySelectorAll(".project-card");
   const projectModal = document.querySelector("#project-modal");
-  const projectModalClose = document.querySelector(".project-modal-close");
   const projectModalCloseInline = document.querySelector(".project-modal-close-inline");
   const projectModalDialog = document.querySelector(".project-modal-dialog");
   const projectModalTitle = document.querySelector("#project-modal-title");
@@ -122,7 +121,6 @@ window.addEventListener("DOMContentLoaded", () => {
   if (
     projectCards.length > 0 &&
     projectModal &&
-    projectModalClose &&
     projectModalCloseInline &&
     projectModalDialog &&
     projectModalTitle &&
@@ -131,18 +129,26 @@ window.addEventListener("DOMContentLoaded", () => {
     projectModalLanguages &&
     projectModalDescription
   ) {
+    const projectModalContent = projectModal.querySelector(
+      ".project-modal-content"
+    );
+    
     const updateModalOverflow = () => {
       window.requestAnimationFrame(() => {
         const hasOverflow =
-          projectModalDialog.scrollHeight > projectModalDialog.clientHeight + 2;
-
-        projectModalDialog.classList.toggle("can-scroll", hasOverflow);
+          projectModalContent.scrollHeight >
+          projectModalContent.clientHeight + 2;
+    
+        projectModalContent.classList.toggle("can-scroll", hasOverflow);
       });
     };
 
     const closeProjectModal = (fromBrowserBack = false) => {
       projectModal.classList.remove("is-open");
       document.body.classList.remove("modal-open");
+
+      projectModalContent.scrollTop = 0;
+      projectModalDialog.scrollTop = 0;
     
       if (modalCloseTimer) {
         window.clearTimeout(modalCloseTimer);
@@ -155,8 +161,8 @@ window.addEventListener("DOMContentLoaded", () => {
         projectModalLanguages.innerHTML = "";
         projectModalImage.src = "";
         projectModalImage.alt = "";
-        projectModalDialog.classList.remove("can-scroll");
-        projectModalDialog.scrollTop = 0;
+        projectModalContent.classList.remove("can-scroll");
+        projectModalContent.scrollTop = 0;
         modalCloseTimer = null;
       }, modalTransitionDuration);
     
@@ -193,6 +199,9 @@ window.addEventListener("DOMContentLoaded", () => {
         window.clearTimeout(modalCloseTimer);
         modalCloseTimer = null;
       }
+
+      projectModalContent.scrollTop = 0;
+      projectModalDialog.scrollTop = 0;
 
       projectModalTitle.textContent = title.textContent.trim();
       projectModalImage.src = image.src;
@@ -269,7 +278,6 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    projectModalClose.addEventListener("click", closeProjectModal);
     projectModalCloseInline.addEventListener("click", closeProjectModal);
 
     document.addEventListener("keydown", (event) => {
