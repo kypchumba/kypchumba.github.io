@@ -103,15 +103,55 @@ a {
   height: 150px;
   overflow: hidden;
   position: relative;
-  background: #111;
+  background: transparent;
 }
 
-.hero-cover video {
+.snake-border {
+    position: relative;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.snake-border svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.snake-track {
+    fill: none;
+    stroke: #a6eee0;
+    stroke-width: 2;
+    stroke-dasharray: 50 1200;
+    stroke-linecap: round;
+    animation: snake 4s linear infinite;
+}
+
+@keyframes snake {
+    to {
+        stroke-dashoffset: -1250;
+    }
+}
+
+.hero-matrix {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+  padding: 0;
+  height: 150px;
+}
+
+#matrixCanvas {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-topline {
@@ -135,7 +175,8 @@ a {
 
 .hero-avatar {
   position: relative;
-  width: 6.5rem;
+  width: 100%;
+  max-width: 6.5rem;
   height: 6.5rem;
   margin-top: -3.25rem;
   margin-left: 1.25rem;
@@ -144,7 +185,7 @@ a {
 
 .hero-avatar img {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 5px;
   border: 3px solid var(--bg);
   border-radius: 50%;
@@ -217,7 +258,7 @@ p {
 
 .hero-profile-item img {
   width: 1.5rem;
-  height: 1.5rem;
+  height: auto;
   object-fit: contain;
   flex: 0 0 1.25rem;
 }
@@ -794,7 +835,6 @@ body.modal-open .site-shell {
   display: block;
 }
 
-.project-modal-header,
 .project-modal-description {
   display: grid;
   gap: 0.45rem;
@@ -809,8 +849,7 @@ body.modal-open .site-shell {
 }
 
 .project-modal-languages img {
-    width: 36px;
-    height: 36px;
+    width: clamp(10px, 5vw, 36px);
     object-fit: contain;
     padding: 1px;
     border-radius: 10px;
@@ -828,15 +867,11 @@ body.modal-open .site-shell {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 1.8rem;
 }
 
 .project-modal-topbar h3 {
   margin-right: auto;
-}
-
-.project-modal-topbar .project-modal-links {
-  gap: 0.55rem;
 }
 
 .project-modal-description p {
@@ -846,17 +881,21 @@ body.modal-open .site-shell {
   line-height: 1.6;
 }
 
-
 .project-modal-links {
-  padding-right: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-inline: auto;
+    gap: 2rem;
+    padding: 0 0 1rem 0;
 }
 
 .project-modal-links img {
   max-height: 2.0rem;
-  max-width:fit-content;
+  width: auto;
+  object-fit: contain;
 }
 
 .project-modal-links a:hover{
@@ -1108,17 +1147,6 @@ input:-webkit-autofill + span {
   }
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 500ms ease, transform 500ms ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (max-width: 720px) {
   .site-shell {
     width: min(calc(100% - 1rem), var(--max-width));
@@ -1187,6 +1215,25 @@ input:-webkit-autofill + span {
   }
 }
 
+@media (max-width: 500px){
+  .project-card{
+    display: grid;
+    align-items: row;
+  }
+  .project-card {
+    border: 2px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-screenshot img {
+      width: 100%;
+      height: 6rem;
+      object-fit: cover;
+  }
+  
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -1199,8 +1246,4 @@ input:-webkit-autofill + span {
     transition: none !important;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
