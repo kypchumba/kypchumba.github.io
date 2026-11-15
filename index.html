@@ -40,14 +40,23 @@
   <body>
     <div class="site-shell">
       <main class="page">
-        <section class="hero reveal" id="top">
+        <section class="hero" id="top">
           <div class="hero-profile">
-            <div class="hero-cover">
-              <video autoplay muted loop playsinline>
-                  <source src="assets/socialmedia/demo.webm" type="video/webm">
-              </video>
+
+            <div class="hero-cover hero-matrix snake-border">
+               <svg viewBox="0 0 400 200" preserveAspectRatio="none">
+                 <defs>
+                    <mask id="hide-top">
+                    <rect width="400" height="200" fill="white"/>
+                    <rect x="0" y="0" width="400" height="5" fill="black"/>
+                    </mask>
+                  </defs>
+                 <rect class="snake-track" x="2" y="2" width="396" height="196" rx="15" mask="url(#hide-top)"/>
+               </svg>
+             <canvas id="matrixCanvas"></canvas>
             </div>
-          
+
+
             <div class="hero-avatar" aria-hidden="true">
               <img
                 src="assets/socialmedia/user.png"
@@ -164,7 +173,7 @@
 
         </section>
 
-        <section class="section reveal" id="experience">
+        <section class="section" id="experience">
           <div class="section-heading">
             <h2>Experience</h2>
           </div>
@@ -231,7 +240,7 @@
           </div>
         </section>
 
-        <section class="section reveal" id="projects">
+        <section class="section" id="projects">
            <div class="section-heading projects-heading">
             <h2>Projects</h2>
             <a class="repo-pill" href="https://github.com/kypchumba?tab=repositories" target="_blank" rel="noopener noreferrer">
@@ -485,7 +494,7 @@
           </div>
         </section>
 
-        <section class="section reveal" id="stack">
+        <section class="section" id="stack">
           <div class="section-heading">
             <h2>Tech Stack</h2>
           </div>
@@ -514,7 +523,7 @@
           </div>
         </section>
 
-        <section class="section reveal" id="get-in-touch">
+        <section class="section" id="get-in-touch">
           <div class="section-heading">
             <h2>Get In Touch</h2>
           </div>
