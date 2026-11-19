@@ -22,6 +22,20 @@ window.addEventListener("DOMContentLoaded", () => {
     interactionCount: 0,
     interactionTypes: new Set(),
   };
+ 
+  //Matrix hero display
+const canvas = document.getElementById("matrixCanvas");
+const ctx = canvas.getContext("2d");
+
+const section = canvas.parentElement;
+
+const characters = "010101010101";
+const fontSize = 18;
+
+let columns = [];
+let columnCount = 0;
+let animationId;
+let isVisible = true;
 
   function countLetters(value) {
     const matches = value.match(/[A-Za-z]/g);
@@ -221,6 +235,7 @@ window.addEventListener("DOMContentLoaded", () => {
         codeIcon.src = "assets/socialmedia/github.png";
         codeIcon.alt = "GitHub";
         codeLink.appendChild(codeIcon);
+        codeLink.dataset.tooltip = "Source code"
         projectModalLinks.appendChild(codeLink);
       }
 
@@ -235,6 +250,7 @@ window.addEventListener("DOMContentLoaded", () => {
         liveIcon.src = "assets/socialmedia/code.png";
         liveIcon.alt = "Live Preview";
         liveLink.appendChild(liveIcon);
+        liveLink.dataset.tooltip = "Live demo"
         projectModalLinks.appendChild(liveLink);
       }
 
@@ -427,134 +443,119 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
   }
+     
+   const reduceMotion = window.matchMedia(
+       "(prefers-reduced-motion: reduce)"
+   ).matches;
+   
+   //canvas sizing responsive
+   function resizeCanvas() {
+   
+       const width = section.clientWidth;
+       const height = section.clientHeight;
+   
+       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+   
+       canvas.width = width * dpr;
+       canvas.height = height * dpr;
+   
+       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+   
+       columnCount = Math.ceil(width / fontSize);
+   
+       columns = Array.from(
+           { length: columnCount },
+           () => Math.random() * (height / fontSize)
+       );
+   }
+   
+   //Draw matrix rain
+   function drawMatrix() {
+       if (!isVisible || reduceMotion) return;
+   
+       const width = section.clientWidth;
+       const height = section.clientHeight;
+   
+       ctx.clearRect(0, 0, width, height);
+   
+       ctx.font = `${fontSize}px monospace`;
+       ctx.textAlign = "center";
+   
+       columns.forEach((position, index) => {
+   
+           const x = index * fontSize + fontSize / 2;
+           const y = position * fontSize;
+   
+           //fading character trails
+           for (let i = 0; i < 10; i++) {
+   
+               const trailY = y - i * fontSize;
+   
+               if (trailY < 0) continue;
+   
+               const char = characters[
+                   Math.floor(Math.random() * characters.length)
+               ];
+   
+               const opacity = Math.max(
+                   0.03,
+                   1 - i / 10
+               );
+   
+               //Bright cyan leading character
+               if (i === 0) {
+                   ctx.fillStyle = "#a5ad0d";
+                   ctx.shadowBlur = 50;
+                   ctx.shadowColor = "#00ffff"
+               } else {
+                   ctx.fillStyle =  `rgba(0, 255, 42, ${opacity})`;
+   
+                   ctx.shadowBlur = 70;
+                   ctx.shadowColor = "#00fffb";
+               }
+   
+               ctx.fillText(char, x, trailY);
+           }
+   
+           ctx.shadowBlur = 0;
+   
+           // Move stream downwards
+           columns[index] += Math.random() * 0.2 + 0.05;
+   
+           //Random restart streams
+           if (
+               y > height && 
+               Math.random() > 0.975
+           ) {
+               columns[index] = 0;
+           }
+       });
+   
+       animationId = requestAnimationFrame(drawMatrix);
+   }
+   
+   //resize with section changes
+   const resizeObserver = new ResizeObserver(resizeCanvas);
+   resizeObserver.observe(section);
+   
+   //pause animation when not in view
+   const observer = new IntersectionObserver(entries => {
+       isVisible = entries[0].isIntersecting;
+   
+       if (isVisible && !reduceMotion) {
+           cancelAnimationFrame(animationId);
+           drawMatrix();
+       } else {
+           cancelAnimationFrame(animationId);
+       }
+   });
+   
+   observer.observe(section);
+   
+   //initialize
+   resizeCanvas();
+   
+   if (!reduceMotion) {
+       drawMatrix();
+   }
 });
- 
-//Matrix hero display
-const canvas = document.getElementById("matrixCanvas");
-const ctx = canvas.getContext("2d");
-
-const section = canvas.parentElement;
-
-const characters = "010101010101";
-const fontSize = 18;
-
-let columns = [];
-let columnCount = 0;
-let animationId;
-let isVisible = true;
-
-const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-).matches;
-
-//canvas sizing responsive
-function resizeCanvas() {
-
-    const width = section.clientWidth;
-    const height = section.clientHeight;
-
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    columnCount = Math.ceil(width / fontSize);
-
-    columns = Array.from(
-        { length: columnCount },
-        () => Math.random() * (height / fontSize)
-    );
-}
-
-//Draw matrix rain
-function drawMatrix() {
-    if (!isVisible || reduceMotion) return;
-
-    const width = section.clientWidth;
-    const height = section.clientHeight;
-
-    ctx.clearRect(0, 0, width, height);
-
-    ctx.font = `${fontSize}px monospace`;
-    ctx.textAlign = "center";
-
-    columns.forEach((position, index) => {
-
-        const x = index * fontSize + fontSize / 2;
-        const y = position * fontSize;
-
-        //fading character trails
-        for (let i = 0; i < 10; i++) {
-
-            const trailY = y - i * fontSize;
-
-            if (trailY < 0) continue;
-
-            const char = characters[
-                Math.floor(Math.random() * characters.length)
-            ];
-
-            const opacity = Math.max(
-                0.03,
-                1 - i / 10
-            );
-
-            //Bright cyan leading character
-            if (i === 0) {
-                ctx.fillStyle = "#a5ad0d";
-                ctx.shadowBlur = 50;
-                ctx.shadowColor = "#00ffff"
-            } else {
-                ctx.fillStyle =  `rgba(0, 255, 42, ${opacity})`;
-
-                ctx.shadowBlur = 70;
-                ctx.shadowColor = "#00fffb";
-            }
-
-            ctx.fillText(char, x, trailY);
-        }
-
-        ctx.shadowBlur = 0;
-
-        // Move stream downwards
-        columns[index] += Math.random() * 0.2 + 0.05;
-
-        //Random restart streams
-        if (
-            y > height && 
-            Math.random() > 0.975
-        ) {
-            columns[index] = 0;
-        }
-    });
-
-    animationId = requestAnimationFrame(drawMatrix);
-}
-
-//resize with section changes
-const resizeObserver = new ResizeObserver(resizeCanvas);
-resizeObserver.observe(section);
-
-//pause animation when not in view
-const observer = new IntersectionObserver(entries => {
-    isVisible = entries[0].isIntersecting;
-
-    if (isVisible && !reduceMotion) {
-        cancelAnimationFrame(animationId);
-        drawMatrix();
-    } else {
-        cancelAnimationFrame(animationId);
-    }
-});
-
-observer.observe(section);
-
-//initialize
-resizeCanvas();
-
-if (!reduceMotion) {
-    drawMatrix();
-}
-
