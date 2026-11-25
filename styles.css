@@ -867,6 +867,7 @@ body.modal-open .site-shell {
   color: white;
   -webkit-text-stroke: 2px black;
   paint-order: stroke fill;
+  margin-top: 0.6rem;
 }
 
 .project-modal-topbar {
